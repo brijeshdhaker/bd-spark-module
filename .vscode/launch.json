@@ -1,0 +1,44 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "AppLauncher",
+            "request": "launch",
+            "mainClass": "org.examples.spark.AppLauncher",
+            "projectName": "bd-spark-module",
+            "args": ["--embedded", "--verbose", "--workflow-type", "batch", "--storage", "local", "--property-file", "${workspaceFolder}/src/main/resources/app_batch_workflow.properties"],
+            "envFile": "${workspaceFolder}/envvars",
+            "vmArgs": "-Dlog.file=/apps/var/logs/spark/DataStreamJob.log"
+        },
+        {
+            "type": "java",
+            "name": "AppStreamWorkflow",
+            "request": "launch",
+            "mainClass": "org.examples.spark.AppStreamWorkflow",
+            "projectName": "bd-spark-module",
+            "args": ["--embedded", "--verbose", "--workflow-type", "batch", "--storage", "local", "--property-file", "${workspaceFolder}/src/main/resources/app_batch_workflow.properties"],
+            "envFile": "${workspaceFolder}/envvars",
+            "vmArgs": "-Dlog.file=/apps/var/logs/spark/AppStreamWorkflow.log"
+        },
+        {
+            "type": "java",
+            "name": "SparkAppWorkflow",
+            "request": "launch",
+            "mainClass": "org.examples.spark.SparkAppWorkflow",
+            "projectName": "bd-spark-module",
+            "args": ["--embedded", "--verbose", "--workflow-type", "batch", "--storage", "local", "--property-file", "${workspaceFolder}/src/main/resources/app_batch_workflow.properties"],
+            "envFile": "${workspaceFolder}/envvars",
+            "vmArgs": "-Dlog.file=/apps/var/logs/spark/SparkAppWorkflow.log"
+        }
+    ]
+}
